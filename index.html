@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Decodificador de Texto</title>
+  </head>
+
+  <body>
+    <div class="fundo-star"></div>
+    <header>
+      <h1>Decodificador Alura</h1>
+    </header>
+
+    <main>
+      <section class="main-section front">
+        <textarea
+          id="areaTexto"
+          placeholder="Digite seu texto"
+          name="texto"
+          spellcheck="false"
+          cols="30"
+          rows="10"
+        ></textarea>
+
+        <div class="main-section-div">
+          <h6>
+            <span class="main-section-div-icone">!</span>Apenas letras
+            minúsculas e sem acento.
+          </h6>
+          <img id="boneco-lupa" src="assets/boneco.png" alt="Boneco" />
+          <div class="balao right">
+            <h3 class="estiloTxt" id="texto-h3">
+              Olá, use apenas letras minúsculas e sem acento!
+            </h3>
+          </div>
+        </div>
+      </section>
+
+      <section class="main-section back">
+        <textarea
+          readonly
+          id="areaTexto2"
+          spellcheck="false"
+          name="texto"
+          cols="30"
+          rows="10"
+        ></textarea>
+
+        <div class="main-section-div svg-container">
+          <img id="cadeado" src="assets/alura-logo.svg" alt="Logo da Alura" />
+        </div>
+      </section>
+
+      <section class="section-btns">
+        <button class="btns" id="criptografar">Criptografar</button>
+        <button class="btns" id="descriptografar">Descriptografar</button>
+        <button class="btns none" id="voltar">Voltar</button>
+        <button class="btns none" id="copiar">Copiar</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>Projeto Luana Medeiros</p>
+      <p>
+        Projetos no
+        <a href="https://github.com/isLuanaMedeirosP" target="_blank">GitHub</a>
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const star = document.querySelector(".fundo-star");
+        const numStars = 200; // Número de estrelas
+
+        function createStar() {
+          const star = document.createElement("div");
+          star.className = "star";
+          star.style.width = `${Math.random() * 3}px`;
+          star.style.height = star.style.width;
+          star.style.top = `${Math.random() * 100}vh`;
+          star.style.left = `${Math.random() * 100}vw`;
+          star.style.animation = `twinkle ${
+            Math.random() * 2 + 1
+          }s infinite, moveStar linear infinite`;
+          return star;
+        }
+
+        for (let i = 0; i < numStars; i++) {
+          star.appendChild(createStar());
+        }
+      });
+    </script>
+  </body>
+</html>
